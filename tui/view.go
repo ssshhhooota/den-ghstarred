@@ -262,7 +262,11 @@ func renderRight(m Model, width, height int) string {
 		height--
 	}
 	if len(m.readme.lines) == 0 {
-		lines = append(lines, m.readme.vp.View())
+		vpLines := strings.Split(m.readme.vp.View(), "\n")
+		if len(vpLines) > height {
+			vpLines = vpLines[:height]
+		}
+		lines = append(lines, strings.Join(vpLines, "\n"))
 		return strings.Join(lines, "\n")
 	}
 	cursorStyle := styleMainCursor.Width(width)

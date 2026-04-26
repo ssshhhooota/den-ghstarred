@@ -23,7 +23,7 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 				newRightW = 1
 			}
 			m.readme.vp.Width = newRightW
-			m.readme.vp.Height = m.height - 2
+			m.readme.vp.Height = m.rightPanelContentH()
 			if m.readme.raw != "" {
 				lines := renderMarkdown(m.readme.raw, newRightW)
 				m.readme.lines = lines
@@ -53,7 +53,7 @@ func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		if rightW < 1 {
 			rightW = 1
 		}
-		m.readme.vp = viewport.New(rightW, m.height-2)
+		m.readme.vp = viewport.New(rightW, m.rightPanelContentH())
 		m, autoCmd := m.withAutoLoadReadme()
 		if autoCmd == nil {
 			m.readme.vp.SetContent("← Select a repository and press Enter to load README")

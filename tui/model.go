@@ -97,6 +97,11 @@ func (m Model) mainH() int {
 	return m.height - m.footerH()
 }
 
+// rightPanelContentH returns the content height for the right README panel.
+func (m Model) rightPanelContentH() int {
+	return m.mainH() - 2
+}
+
 // searchListH returns the number of visible result rows in the [2] pane.
 func (m Model) searchListH() int {
 	mainH := m.mainH()

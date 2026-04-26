@@ -33,6 +33,7 @@ func (m Model) handleSearchPaneKey(msg tea.KeyMsg) (tea.Model, tea.Cmd) {
 	case "?":
 		if !m.search.focused {
 			m.showHelp = !m.showHelp
+			m.readme.vp.Height = m.rightPanelContentH()
 			return m, nil
 		}
 
@@ -146,6 +147,7 @@ func (m Model) handleNormalKey(msg tea.KeyMsg) (tea.Model, tea.Cmd) {
 	switch msg.String() {
 	case "?":
 		m.showHelp = !m.showHelp
+		m.readme.vp.Height = m.rightPanelContentH()
 		return m, nil
 
 	case "q", "ctrl+c":
