@@ -43,21 +43,6 @@ export GITHUB_TOKEN=ghp_...
 den-ghstarred
 ```
 
-### Key Bindings
-
-| Key | Action |
-|-----|--------|
-| `j` / `↓` | Sidebar: move cursor down |
-| `k` / `↑` | Sidebar: move cursor up |
-| `Enter` | Load README and focus main view |
-| `j` / `k` | Main view: move cursor line by line |
-| `d` / `Space` | Main view: scroll half page down |
-| `u` | Main view: scroll half page up |
-| `o` | Open selected repository in browser |
-| `Esc` | Return to sidebar |
-| `R` | Refresh repository list (clear cache) |
-| `q` / `Ctrl+C` | Quit |
-
 ## Development
 
 ```sh
